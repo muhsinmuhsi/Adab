@@ -44,10 +44,10 @@ const Footer = () => {
                 <Link to="/products" className="text-light-dark hover:text-primary">Products</Link>
               </li>
               <li>
-                <Link to="/about" className="text-light-dark hover:text-primary">About Us</Link>
+                <Link to="/AboutUs" className="text-light-dark hover:text-primary">About Us</Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-light-dark hover:text-primary">Privacy Policy</Link>
+                <Link to="/privacy_Policy" className="text-light-dark hover:text-primary">Privacy Policy</Link>
               </li>
             </ul>
           </div>

@@ -7,18 +7,19 @@
  * @param {string} product._id - Product ID
  */
 export const shareToWhatsApp = (product) => {
-    // Phone number (replace with your business WhatsApp number)
-    const phoneNumber = "1234567890"; 
-    
-    // Create message
-    const message = `Hello! I'm interested in purchasing:\n\n*${product.name}*\nPrice: $${product.price.toFixed(2)}\nProduct ID: ${product._id}\n\nPlease provide me with payment and delivery details.`;
-    
-    // Encode the message
-    const encodedMessage = encodeURIComponent(message);
-    
-    // Create WhatsApp URL
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-    
-    // Open WhatsApp in a new window
-    window.open(whatsappUrl, '_blank');
-  };
+  const phoneNumber = "8137945631";
+
+  // Format price with commas (Indian locale)
+  const formattedPrice = new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    minimumFractionDigits: 2
+  }).format(product.price);
+
+  const message = `Hello! I'm interested in purchasing:\n\n*${product.name.trim()}*\nPrice: ${formattedPrice}\nProduct ID: ${product._id}\nImage: ${product.image}\n\nPlease provide me with payment and delivery details.`;
+
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  window.open(whatsappUrl, '_blank');
+};

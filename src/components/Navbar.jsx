@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../assets/LogoPng.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white shadow-md pt-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="font-heading font-bold text-xl text-primary">ShopWave</span>
+            <Link to="/" className="flex-shrink-0 flex items-start">
+            <img src={Logo} alt="Logo" className=" w-36 h-28" />
             </Link>
           </div>
           
@@ -18,7 +19,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/" className="px-3 py-2 text-dark hover:text-primary font-medium">Home</Link>
             <Link to="/products" className="px-3 py-2 text-dark hover:text-primary font-medium">Products</Link>
-            <Link to="/about" className="px-3 py-2 text-dark hover:text-primary font-medium">About Us</Link>
+            <Link to="/AboutUs" className="px-3 py-2 text-dark hover:text-primary font-medium">About Us</Link>
           </div>
           
           {/* Mobile menu button */}

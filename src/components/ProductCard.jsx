@@ -1,45 +1,50 @@
 import { Link } from 'react-router-dom';
-import { shareToWhatsApp } from '../utils/whatsappShare';
+
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-      <Link to={`/products/${product._id}`}>
-        <div className="h-48 overflow-hidden">
-          <img 
-            src={product.image} 
+    <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-transform transform hover:-translate-y-0.5 overflow-hidden border border-gray-200 max-w-xs mx-auto sm:max-w-sm w-full">
+      <Link to={`/products/${product._id}`} className="block">
+        <div className="w-full h-48 sm:h-52 bg-gray-100">
+          <img
+            src={
+              product.images && product.images.length > 0
+                ? product.images[0]
+                : 'https://via.placeholder.com/300'
+            }
             alt={product.name}
-            className="w-full h-full object-cover" 
+            className="w-full h-full object-fill"
           />
         </div>
       </Link>
-      
-      <div className="p-4">
+
+      <div className="p-3 sm:p-4">
         <Link to={`/products/${product._id}`}>
-          <h3 className="text-lg font-medium text-dark truncate">{product.name}</h3>
+          <h3 className="text-base sm:text-lg font-semibold text-gray-800 truncate hover:underline">
+            {product.title}
+          </h3>
         </Link>
-        
-        <div className="mt-1 text-sm text-dark-light line-clamp-2">
-          {product.description}
-        </div>
-        
-        <div className="flex items-center justify-between mt-3">
-          <span className="text-primary font-bold">${product.price.toFixed(2)}</span>
-          
-          <div className="flex space-x-2">
-            <Link 
+
+        <div className="mt-3 sm:mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <span className="text-base sm:text-lg font-bold text-yellow-600">
+            ₹{product.price}
+          </span>
+
+          <div className="flex gap-2">
+            <Link
               to={`/products/${product._id}`}
-              className="bg-primary hover:bg-primary-dark text-white text-sm py-1 px-3 rounded focus:outline-none"
+              className="flex-1 text-center bg-black hover:bg-indigo-600 text-white text-xs sm:text-sm px-3 py-1.5 rounded-md"
             >
               View
             </Link>
-            
-            <button
+
+            {/* <button
               onClick={() => shareToWhatsApp(product)}
-              className="bg-accent hover:bg-accent-dark text-white text-sm py-1 px-3 rounded focus:outline-none flex items-center"
+              className="flex-1 flex items-center justify-center gap-1 bg-green-500 hover:bg-green-600 text-white text-xs sm:text-sm px-3 py-1.5 rounded-md"
             >
-              <span>Buy Now</span>
-            </button>
+              <FaWhatsapp className="text-base" />
+              <span>Buy</span>
+            </button> */}
           </div>
         </div>
       </div>

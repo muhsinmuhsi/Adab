@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { CheckSquare,  LockKeyhole, Phone } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import beauty from '../assets/react.svg'
-import Kitchen from '../assets/react.svg'
+import { Link, useNavigate } from 'react-router-dom';
+import beauty from '../assets/EVM Wheels Bookings and Customers.webp'
+import Kitchen from '../assets/Cooking-at-Home.webp'
 import Health from '../assets/react.svg'
 import Fashion from '../assets/react.svg'
 import Electronics from '../assets/react.svg'
 import Hobbies from '../assets/react.svg'
-import Mens from '../assets/react.svg'
-import Women from '../assets/react.svg'
-import Kids from '../assets/react.svg'
 
 
 const dummyCategories = [
   {
     _id: '1',
-    category: ' Beauty & Personal Care ',
+    category: 'Gadgets',
     image: beauty,
-    alt: ' Beauty & Personal Care ',
+    alt: 'Gadgets',
   },
   {
     _id: '2',
@@ -51,24 +47,6 @@ const dummyCategories = [
     image: Hobbies,
     alt: 'Hobbies & Essentials',
   },
-  {
-    _id: '7',
-    category: "Men's",
-    image: Mens,
-    alt: "Men's",
-  },
-  {
-    _id: '8',
-    category: "Women's",
-    image: Women,
-    alt: "Women's",
-  },
-  {
-    _id: '9',
-    category: "Kid's",
-    image: Kids,
-    alt: "Kid's",
-  },
 ];
 
 
@@ -88,12 +66,35 @@ const Home = () => {
     <div className='m-3'>
       
 
-      <button
-        data-aos="fade-up"
-        onClick={() => navigate('/products')}
-        className='bg-black text-white font-serif p-2 rounded-md m-3 mt-5'>
-        Shop Now
-      </button>
+      <section className="bg-gradient-to-b from-white to-gray-100 py-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 flex flex-col-reverse md:flex-row items-center gap-10">
+        
+        {/* Left Text Section */}
+        <div className="flex-1 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+            Discover the Best Deals for Your Baby
+          </h1>
+          <p className="text-gray-600 mb-6 text-lg">
+            Premium quality products at unbeatable prices. Shop from trusted brands.
+          </p>
+          <Link to="/products">
+            <button className="px-6 py-3 bg-yellow-500 text-white rounded-full shadow hover:bg-blue-700 transition duration-300">
+              Shop Now
+            </button>
+          </Link>
+
+          {/* 👇 Image Below Button */}
+          <div className="mt-8">
+            <img src={Kitchen} alt="Product Showcase" className="w-full max-w-md mx-auto md:mx-0 rounded-lg shadow-lg" />
+          </div>
+        </div>
+
+        {/* Right Image Section */}
+        <div className="flex-1">
+          <img src={beauty} alt="Hero" className="w-full max-w-lg mx-auto" />
+        </div>
+      </div>
+    </section>
 
       <h1 className='font-serif text-xl p-2 my-5'>Shop our curated collection of stylish clothing, accessories, and more. Free shipping on orders over
       $50. </h1>
@@ -109,9 +110,9 @@ const Home = () => {
           <div
             key={cat._id}
             data-aos="fade-up"
-            onClick={() => navigate(`/product/category/${cat.category}`)}
+            onClick={() => navigate(`/products/category/${cat.category}`)}
             className="relative cursor-pointer rounded-md overflow-hidden group"
-            style={{ aspectRatio: '2/3' }} // taller image
+            style={{ aspectRatio: '2/3' }} 
           >
             {/* Image */}
             <img
@@ -144,55 +145,6 @@ const Home = () => {
     </div>
 
       </div>
-
-
-      <div>
-  {/* Why Choose Us */}
-  <h1
-    data-aos="fade-up"
-    className="text-2xl sm:text-3xl font-serif font-bold mt-24 mb-9 text-center"
-  >
-    Why Choose Us
-  </h1>
-
-  <div className="grid grid-cols-3 gap-4 sm:gap-8 justify-items-center">
-    {/* Support */}
-    <div
-      data-aos="fade-up"
-      className="bg-white border rounded-2xl shadow-md w-28 h-32 sm:w-36 sm:h-36 flex flex-col justify-center items-center hover:shadow-xl transition duration-300 ease-in-out"
-    >
-      <div className="bg-gray-200 rounded-full h-12 w-12 flex justify-center items-center mb-2">
-        <Phone size={22} />
-      </div>
-      <h2 className="text-xs font-serif font-semibold text-center">24/7 Support</h2>
-    </div>
-
-    {/* Quality Checked */}
-    <div
-      data-aos="fade-up"
-      className="bg-white border rounded-2xl shadow-md w-28 h-32 sm:w-36 sm:h-36 flex flex-col justify-center items-center hover:shadow-xl transition duration-300 ease-in-out"
-    >
-      <div className="bg-gray-200 rounded-full h-12 w-12 flex justify-center items-center mb-2">
-        <CheckSquare size={22} />
-      </div>
-      <h2 className="text-xs font-serif font-semibold text-center">Quality Checked</h2>
-    </div>
-
-    {/* Secure Checkout */}
-    <div
-      data-aos="fade-up"
-      className="bg-white border rounded-2xl shadow-md w-28 h-32 sm:w-36 sm:h-36 flex flex-col justify-center items-center hover:shadow-xl transition duration-300 ease-in-out"
-    >
-      <div className="bg-gray-200 rounded-full h-12 w-12 flex justify-center items-center mb-2">
-        <LockKeyhole size={22} />
-      </div>
-      <h2 className="text-xs font-serif font-semibold text-center">Secure Checkout</h2>
-    </div>
-  </div>
-</div>
-
-
-      
     </div>
   )
 }
