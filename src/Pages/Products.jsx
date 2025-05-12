@@ -18,72 +18,7 @@ const Products = () => {
         setProducts(response.data.data || []);
       } catch (error) {
         console.error('Error fetching products:', error);
-        setProducts([
-          {
-            _id: '1',
-            name: 'Wireless Earbuds',
-            description: 'Premium wireless earbuds with noise cancellation and long battery life.',
-            price: 79.99,
-            category: 'electronics',
-            image: '/api/placeholder/400/320'
-          },
-          {
-            _id: '2',
-            name: 'Smart Watch',
-            description: 'Feature-packed smartwatch with health monitoring and notifications.',
-            price: 129.99,
-            category: 'electronics',
-            image: '/api/placeholder/400/320'
-          },
-          {
-            _id: '3',
-            name: 'Portable Speaker',
-            description: 'Waterproof Bluetooth speaker with 24-hour battery life.',
-            price: 59.99,
-            category: 'electronics',
-            image: '/api/placeholder/400/320'
-          },
-          {
-            _id: '4',
-            name: 'Laptop Backpack',
-            description: 'Stylish and functional backpack with anti-theft features.',
-            price: 49.99,
-            category: 'fashion',
-            image: '/api/placeholder/400/320'
-          },
-          {
-            _id: '5',
-            name: 'Leather Wallet',
-            description: 'Genuine leather wallet with RFID protection.',
-            price: 34.99,
-            category: 'fashion',
-            image: '/api/placeholder/400/320'
-          },
-          {
-            _id: '6',
-            name: 'Stainless Steel Water Bottle',
-            description: 'Double-walled vacuum insulated bottle keeps drinks hot or cold.',
-            price: 24.99,
-            category: 'home',
-            image: '/api/placeholder/400/320'
-          },
-          {
-            _id: '7',
-            name: 'Smart LED Light Bulbs',
-            description: 'WiFi-connected RGB bulbs that can be controlled via smartphone.',
-            price: 19.99,
-            category: 'home',
-            image: '/api/placeholder/400/320'
-          },
-          {
-            _id: '8',
-            name: 'Wireless Charging Pad',
-            description: 'Fast wireless charger compatible with all Qi-enabled devices.',
-            price: 29.99,
-            category: 'electronics',
-            image: '/api/placeholder/400/320'
-          }
-        ]);
+        
       } finally {
         setLoading(false);
       }

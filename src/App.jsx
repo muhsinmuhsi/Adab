@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import ProductRoutes from './routes/porductRoutes'
-import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import AdminRoutes from './routes/adminRoutes'
 
 function App() {
 
@@ -11,10 +11,10 @@ function App() {
     <div>
       
       <BrowserRouter>
-      <Navbar/>
+      
       <Routes>
       <Route path="/*" element={<ProductRoutes/>}/>
-      {/* <Route path="/admin/*" element={<AdminRoutes/>} /> */}
+      <Route path="/admin/*" element={<AdminRoutes/>} />
       </Routes>
       <Footer/>
       </BrowserRouter>

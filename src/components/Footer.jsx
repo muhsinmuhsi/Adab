@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Lock } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const navigate=useNavigate()
   return (
     <footer className="bg-dark text-light pt-10 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,7 +83,9 @@ const Footer = () => {
         
         <div className="mt-8 pt-6 border-t border-dark-light text-center">
           <p className="text-light-dark">
-            &copy; {new Date().getFullYear()} ShopWave. All rights reserved.
+            &copy; {new Date().getFullYear()} Adab. All rights reserved.<Lock 
+            onClick={()=>navigate('/admin/Login')}
+            className='inline p-1 mb-1'/>
           </p>
         </div>
       </div>

@@ -7,6 +7,7 @@ import CategoryPage from '../Pages/CategoryPage'
 import FloatingWhatsAppButton from '../components/whatsappbutton'
 import AboutUs from '../Pages/AboutUs'
 import PrivacyPolicy from '../Pages/PrivacyPolicy'
+import Navbar from '../components/Navbar'
 
 
 const ProductRoutes = () => {
@@ -14,7 +15,7 @@ const ProductRoutes = () => {
     <div>
         
         
-            
+            <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/products' element={<Products/>}/>
