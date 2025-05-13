@@ -15,7 +15,7 @@ const AdminHome = () => {
         </div> */}
 
         <div className="flex flex-col md:flex-row gap-6 justify-center">
-          <button onClick={()=>navigate('/admin/MangeProducts')} className="w-full md:w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-6 rounded-2xl text-xl shadow-md transition duration-300">
+          <button onClick={()=>navigate('/admin/ManageProducts')} className="w-full md:w-1/2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-6 rounded-2xl text-xl shadow-md transition duration-300">
             Manage Products
           </button>
           <button onClick={()=>navigate('/admin/addProduct')} className="w-full md:w-1/2 bg-green-500 hover:bg-green-600 text-white font-semibold py-6 rounded-2xl text-xl shadow-md transition duration-300">

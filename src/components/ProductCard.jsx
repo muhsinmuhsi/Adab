@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
           <div className="flex gap-2">
             <Link
               to={`/products/${product._id}`}
-              className="flex-1 text-center bg-black hover:bg-indigo-600 text-white text-xs sm:text-sm px-3 py-1.5 rounded-md"
+              className="flex-1 text-center bg-black hover:bg-gray-600 text-white text-xs sm:text-sm px-3 py-1.5 rounded-md"
             >
               View
             </Link>

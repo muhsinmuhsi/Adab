@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link, useNavigate } from 'react-router-dom';
-import beauty from '../assets/EVM Wheels Bookings and Customers.webp'
-import Kitchen from '../assets/Cooking-at-Home.webp'
+import beauty from '../assets/BannerImage.jpg'
+import Kitchen from '../assets/BannerImage2.jpg'
 import Health from '../assets/react.svg'
 import Fashion from '../assets/react.svg'
 import Electronics from '../assets/react.svg'
@@ -13,39 +13,39 @@ import Hobbies from '../assets/react.svg'
 const dummyCategories = [
   {
     _id: '1',
-    category: 'Gadgets',
+    category: 'Beauty',
     image: beauty,
-    alt: 'Gadgets',
+    alt: 'Beauty',
   },
   {
     _id: '2',
-    category: ' Home & Kitchen',
+    category: 'Kitchen',
     image: Kitchen,
-    alt: ' Home & Kitchen',
+    alt: 'Kitchen',
   },
   {
     _id: '3',
-    category: 'Health & Fitness',
+    category: 'Health',
     image: Health,
-    alt: 'Health & Fitness',
+    alt: 'Health',
   },
   {
     _id: '4',
-    category: 'Fashion & Lifestyle',
+    category: 'Fashion',
     image: Fashion,
-    alt: 'Fashion & Lifestyle',
+    alt: 'Fashion',
   },
   {
     _id: '5',
-    category: 'Electronics & Accessories',
+    category: 'Electronics',
     image: Electronics,
-    alt: 'Electronics & Accessories',
+    alt: 'Electronics',
   },
   {
     _id: '6',
-    category: 'Hobbies & Essentials',
+    category: 'Hobbies',
     image: Hobbies,
-    alt: 'Hobbies & Essentials',
+    alt: 'Hobbies',
   },
 ];
 
@@ -78,7 +78,7 @@ const Home = () => {
             Premium quality products at unbeatable prices. Shop from trusted brands.
           </p>
           <Link to="/products">
-            <button className="px-6 py-3 bg-yellow-500 text-white rounded-full shadow hover:bg-blue-700 transition duration-300">
+            <button className="px-6 py-3 bg-yellow-500 text-white rounded-full shadow hover:bg-yellow-700 transition duration-300">
               Shop Now
             </button>
           </Link>
@@ -91,16 +91,16 @@ const Home = () => {
 
         {/* Right Image Section */}
         <div className="flex-1">
-          <img src={beauty} alt="Hero" className="w-full max-w-lg mx-auto" />
+          <img src={beauty} alt="Hero" className="w-full max-w-lg mx-auto rounded-2xl" />
         </div>
       </div>
     </section>
 
-      <h1 className='font-serif text-xl p-2 my-5'>Shop our curated collection of stylish clothing, accessories, and more. Free shipping on orders over
+      <h1 className='font-stretch-125% text-xl p-2 my-5'>Shop our curated collection of stylish clothing, accessories, and more. Free shipping on orders over
       $50. </h1>
 
       <div>
-        <h1 data-aos="fade-up" className='text-3xl sm:text-5xl font-serif font-bold mt-14 mb-5'>
+        <h1 data-aos="fade-up" className='text-3xl sm:text-5xl font-bold font-stretch-125% mt-14 mb-5 text-center'>
           Shop by Category
         </h1>
 

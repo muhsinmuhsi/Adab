@@ -21,7 +21,7 @@ const AdminNavbar = () => {
                 <button className='font-semibold' onClick={handleLogout} ><LogOut className='inline '/> Logout</button>
             </div>
             <div>
-               <button onClick={()=>navigate('/admin/Home')}><Home /></button> 
+               <button onClick={()=>navigate('/admin/adminDash')}><Home /></button> 
             </div>
 
         </div>

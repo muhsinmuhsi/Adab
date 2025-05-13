@@ -1,15 +1,19 @@
 import { Lock } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../assets/LogoPng.png'
 
 const Footer = () => {
   const navigate=useNavigate()
   return (
     <footer className="bg-dark text-light pt-10 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-dark-light">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-heading font-bold mb-4">ShopWave</h3>
+            <div className='flex justify-center'>
+              <img src={Logo} className='w-48 h-42'/>
+            </div>
+            
             <p className="text-light-dark mb-4">
               Quality products at affordable prices, delivered to your doorstep.
             </p>

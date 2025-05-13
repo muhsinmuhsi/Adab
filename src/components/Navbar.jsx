@@ -42,31 +42,37 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link 
-              to="/" 
-              className="block px-3 py-2 text-base font-medium text-dark hover:text-primary hover:bg-light-dark rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link 
-              to="/products" 
-              className="block px-3 py-2 text-base font-medium text-dark hover:text-primary hover:bg-light-dark rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Products
-            </Link>
-            <Link 
-              to="/about" 
-              className="block px-3 py-2 text-base font-medium text-dark hover:text-primary hover:bg-light-dark rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About Us
-            </Link>
-          </div>
-        </div>
+        <div
+  className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+    isMenuOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
+  }`}
+>
+  <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+    <Link 
+      to="/" 
+      className="block px-3 py-2 text-base font-medium text-dark hover:text-primary hover:bg-light-dark rounded-md"
+      onClick={() => setIsMenuOpen(false)}
+    >
+      Home
+    </Link>
+    <Link 
+      to="/products" 
+      className="block px-3 py-2 text-base font-medium text-dark hover:text-primary hover:bg-light-dark rounded-md"
+      onClick={() => setIsMenuOpen(false)}
+    >
+      Products
+    </Link>
+    <Link 
+      to="/AboutUs" 
+      className="block px-3 py-2 text-base font-medium text-dark hover:text-primary hover:bg-light-dark rounded-md"
+      onClick={() => setIsMenuOpen(false)}
+    >
+      About Us
+    </Link>
+  </div>
+</div>
+
+
       )}
     </nav>
   );
