@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link, useNavigate } from 'react-router-dom';
-import beauty from '../assets/BannerImage.jpg'
-import Kitchen from '../assets/BannerImage2.jpg'
-import Health from '../assets/react.svg'
-import Fashion from '../assets/react.svg'
-import Electronics from '../assets/react.svg'
-import Hobbies from '../assets/react.svg'
+import bannerImage1 from '../assets/BannerImage.jpg';
+import bannerImage2 from '../assets/BannerImage2.jpg';
+import beauty from '../assets/beautyandPersonalcare.jpg'
+import Kitchen from '../assets/KitchenImage.jpg'
+import Health from '../assets/HealthImage.jpg'
+import Fashion from '../assets/FashionImage.jpg'
+import Electronics from '../assets/ElectronicsImage.jpg'
+import Hobbies from '../assets/HobbiesImages.jpg'
 
 
 const dummyCategories = [
@@ -72,7 +74,7 @@ const Home = () => {
         {/* Left Text Section */}
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-            Discover the Best Deals for Your Baby
+            Everything You Need, All in One Place.
           </h1>
           <p className="text-gray-600 mb-6 text-lg">
             Premium quality products at unbeatable prices. Shop from trusted brands.
@@ -85,13 +87,13 @@ const Home = () => {
 
           {/* 👇 Image Below Button */}
           <div className="mt-8">
-            <img src={Kitchen} alt="Product Showcase" className="w-full max-w-md mx-auto md:mx-0 rounded-lg shadow-lg" />
+            <img src={bannerImage2} alt="Product Showcase" className="w-full max-w-md mx-auto md:mx-0 rounded-lg shadow-lg" />
           </div>
         </div>
 
         {/* Right Image Section */}
         <div className="flex-1">
-          <img src={beauty} alt="Hero" className="w-full max-w-lg mx-auto rounded-2xl" />
+          <img src={bannerImage1} alt="Hero" className="w-full max-w-lg mx-auto rounded-2xl" />
         </div>
       </div>
     </section>
@@ -122,7 +124,7 @@ const Home = () => {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <div className="absolute inset-0  bg-black opacity-50 flex items-center justify-center">
               <h2 className="text-white text-lg sm:text-xl font-semibold font-serif text-center px-2">
                 {cat.category}
               </h2>

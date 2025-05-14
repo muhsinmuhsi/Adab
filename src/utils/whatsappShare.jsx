@@ -7,7 +7,7 @@
  * @param {string} product._id - Product ID
  */
 export const shareToWhatsApp = (product) => {
-  const phoneNumber = "8137945631";
+  const phoneNumber = "+918589868486";
 
   // Format price with commas (Indian locale)
   const formattedPrice = new Intl.NumberFormat('en-IN', {

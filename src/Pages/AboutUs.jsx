@@ -43,10 +43,10 @@ const AboutUs = () => {
             If you need any help, please contact us
           </p>
           <p className="text-sm text-blue-600 font-medium">
-            Phone: +91 -23432232222
+            Phone: +91 -85898 68486
           </p>
           <p className="text-sm text-blue-600 font-medium">
-            Email: Samplez@gmail.com
+            Email: adabcollections0372@gmail.com
           </p>
         </div>
 
