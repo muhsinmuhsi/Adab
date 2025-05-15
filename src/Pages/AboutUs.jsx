@@ -57,8 +57,8 @@ const AboutUs = () => {
             Our physical office address
           </p>
           <p className="text-sm text-blue-600 font-medium">
-            chemmad  road , munniyoor, Malappuram<br />
-            Kerala, 673637
+            Chemmad-Thalappara Rd, Moonniyur, <br />
+            Malappuram, Kerala 676311
           </p>
         </div>
       </div>

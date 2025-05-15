@@ -43,7 +43,7 @@ const Products = () => {
       return 0;
     });
 
-  const categories = ['all', 'electronics', 'fashion', 'home'];
+  const categories = ["all", ...new Set(products?.map((p) => p.category))];
 
   return (
     <div className="bg-light min-h-screen">
