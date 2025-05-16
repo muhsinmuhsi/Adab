@@ -24,8 +24,10 @@ const Navbar = () => {
           </div>
           
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center"><a href='https://www.instagram.com/adab.collections?igsh=ZXpmcWV5amVoNW5h'>
             <FaInstagram className='w-5 h-5 mr-2 hover:text-pink-600'/>
+          </a>
+            
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-dark-light hover:text-primary focus:outline-none"

@@ -5,6 +5,7 @@ import AdminNavbar from '../Pages/Admin/AdminNavbar'
 import AddProduct from '../Pages/Admin/AddProduct'
 import ProductEdit from '../Pages/Admin/EditProduct'
 import ManageProducts from '../Pages/Admin/ManageProduct'
+import AdminProtected from '../components/AdminProtected'
 
 const AdminRoutes = () => {
   return (
@@ -14,10 +15,10 @@ const AdminRoutes = () => {
              <AdminNavbar/>
               <Routes>
                 <Route path='/Login' element={<AdminLogin/>}/>
-                <Route path='/adminDash' element={<AdminHome/>}/>
-                <Route path='/addProduct' element={<AddProduct/>}/>
-                <Route path='/EditProducts/:id' element={<ProductEdit/>}/>
-                <Route path='/ManageProducts' element={<ManageProducts/>}/>
+                <Route path='/adminDash' element={<AdminProtected><AdminHome/></AdminProtected>}/>
+                <Route path='/addProduct' element={<AdminProtected><AddProduct/></AdminProtected>}/>
+                <Route path='/EditProducts/:id' element={<AdminProtected><ProductEdit/></AdminProtected>}/>
+                <Route path='/ManageProducts' element={<AdminProtected><ManageProducts/></AdminProtected>}/>
               </Routes>
     </div>
   )
