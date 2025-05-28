@@ -14,7 +14,7 @@ const AddProduct = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -22,7 +22,7 @@ const AddProduct = () => {
 
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       images: files,
     }));
@@ -42,39 +42,38 @@ const AddProduct = () => {
       form.append("images", image);
     });
 
-
     try {
-         adminApi.post('/products', form, {
+      adminApi.post("/products", form, {
         headers: {
-          'Content-Type': 'multipart/form-data'
-        }
+          "Content-Type": "multipart/form-data",
+        },
       });
-      
     } catch (error) {
-        console.log(error,'error');
-        toast.error('error to add product')
+      console.log(error, "error");
+      toast.error("error to add product");
     }
-    toast.success('product added');
+    toast.success("product added");
     console.log("Form submitted!", formData);
     setFormData({
-    title: "",
-    description: "",
-    price: "",
-    category: "",
-    quantity: "",
-    images: [],
-
-    })
+      title: "",
+      description: "",
+      price: "",
+      category: "",
+      quantity: "",
+      images: [],
+    });
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
       <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-3xl">
-        <h2 className="text-3xl font-bold mb-8 text-center text-gray-700">Add New Product</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-gray-700">
+          Add New Product
+        </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label className="block mb-2 text-gray-600">Title</label>
-            <input 
+            <input
               type="text"
               name="title"
               value={formData.title}
@@ -86,7 +85,7 @@ const AddProduct = () => {
 
           <div>
             <label className="block mb-2 text-gray-600">Description</label>
-            <textarea 
+            <textarea
               name="description"
               value={formData.description}
               onChange={handleChange}
@@ -99,7 +98,7 @@ const AddProduct = () => {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block mb-2 text-gray-600">Price</label>
-              <input 
+              <input
                 type="number"
                 name="price"
                 value={formData.price}
@@ -111,19 +110,28 @@ const AddProduct = () => {
 
             <div>
               <label className="block mb-2 text-gray-600">Category</label>
-              <input 
-                type="text"
+              <select
                 name="category"
                 value={formData.category}
                 onChange={handleChange}
                 className="w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
-              />
+              >
+                <option value="" disabled>
+                  Select a category
+                </option>
+                <option value="Beauty">Beauty</option>
+                <option value="Kitchen">Kitchen</option>
+                <option value="Health">Health</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Hobbies">Hobbies</option>
+              </select>
             </div>
 
             <div>
               <label className="block mb-2 text-gray-600">Quantity</label>
-              <input 
+              <input
                 type="number"
                 name="quantity"
                 value={formData.quantity}
@@ -134,7 +142,7 @@ const AddProduct = () => {
 
             <div>
               <label className="block mb-2 text-gray-600">Upload Images</label>
-              <input 
+              <input
                 type="file"
                 multiple
                 onChange={handleImageChange}

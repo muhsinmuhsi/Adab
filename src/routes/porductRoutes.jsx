@@ -8,6 +8,7 @@ import FloatingWhatsAppButton from '../components/whatsappbutton'
 import AboutUs from '../Pages/AboutUs'
 import PrivacyPolicy from '../Pages/PrivacyPolicy'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 
 const ProductRoutes = () => {
@@ -24,6 +25,7 @@ const ProductRoutes = () => {
           <Route path='/AboutUs' element={<AboutUs/>}/>
           <Route path='/privacy_Policy' element={<PrivacyPolicy/>}/>
         </Routes>
+        <Footer/>
 
         <FloatingWhatsAppButton/>
         
